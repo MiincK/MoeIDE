@@ -140,6 +140,7 @@ namespace Meowtrix.MoeIDE
 
         private void SetVisualBrush(object sender, SizeChangedEventArgs e)
         {
+            if (hostVisualBrush == null) return;
             NativeMethods.GetWindowRect(((HwndSource)PresentationSource.FromVisual(Application.Current.MainWindow)).Handle,
                 out RECT mainRect);
             double x = (hostRect.Left - mainRect.Left) / (double)mainRect.Width,
